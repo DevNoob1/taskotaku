@@ -1,0 +1,75 @@
+/* App.css */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.App {
+  text-align: center;
+  background-color: black;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 3rem;
+  font-weight: bolder;
+  cursor: pointer;
+  background-color: white;
+}
+
+.cell.black {
+  color: black;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.cell.green {
+  color: green;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.cell:hover {
+  background-color: lightgray;
+}
+
+.reset-button {
+  background-color: red;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 15%;
+}
+
+.reset-button:hover {
+  background-color: darkred;
+}
