@@ -1,75 +1,39 @@
-/* App.css */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #000;
+    }
 
-  to {
-    opacity: 1;
-  }
-}
+    /* Styles for making desktop appear like phone size */
+    .App {
+        max-width: 375px;
+        /* This width is typical for mobile screens (like an iPhone) */
+        margin: 0 auto;
+        /* Centers the layout horizontally */
+        background-color: transparent;
+        /* Add any background color */
+        min-height: 100vh;
+        /* Ensure it covers the full viewport height */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        /* Optional shadow to make it look like a phone frame */
+        border-radius: 20px;
+        /* Rounded corners to resemble a mobile device shape */
+    }
 
-.App {
-  text-align: center;
-  background-color: black;
-  color: white;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    /* Media query for smaller devices (actual phones) */
+    @media (max-width: 480px) {
+        .App {
+            max-width: 100%;
+            /* Use the full width on smaller screens */
+            padding: 10px;
+            /* Adjust padding for smaller devices */
+            border-radius: 0;
+            /* Remove border radius on real phones */
+            box-shadow: none;
+            /* No shadow needed on real mobile screens */
+        }
+    }
 
-.board {
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-}
-
-.row {
-  display: flex;
-  gap: 10px;
-}
-
-.cell {
-  width: 100px;
-  height: 100px;
-  border: 1px solid white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  font-size: 3rem;
-  font-weight: bolder;
-  cursor: pointer;
-  background-color: white;
-}
-
-.cell.black {
-  color: black;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.cell.green {
-  color: green;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.cell:hover {
-  background-color: lightgray;
-}
-
-.reset-button {
-  background-color: red;
-  color: white;
-  font-size: 1rem;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
-  width: 15%;
-}
-
-.reset-button:hover {
-  background-color: darkred;
-}
+    *::-webkit-scrollbar {
+        display: none;
+    }
