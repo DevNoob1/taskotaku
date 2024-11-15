@@ -1,22 +1,15 @@
 import React from 'react';
 import './App.css';
-// import Sidebar from './components/Sidebar.js';
-import Navbar from './components/Navbar.js';
 import Header from './components/Header.js';
-import Last from './components/Last.js';
-import Profile from './components/Profile.js';
-// import MainBody from './components/MainBody.js';
+import Middle from './components/Middle.js';
+import Footer from './components/Footer.js';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-white">
       <Header />
-      <Profile />
-      <Last />
-      {/* 
-        <Sidebar />
-        <MainBody />
-      */}
+      <Middle />
+      <Footer />
     </div>
   );
 }

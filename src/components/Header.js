@@ -1,60 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from './Navbar';
-import '../styles/Header.css';
-import backgroundVideo from '../assets/-5ae6-4adb-81b4-c2d194c6ef4c.mp4'; // Path to your video file
-import profilePic from '../assets/woman.jpg'; // Path to your profile picture
-import { FaCalendarAlt, FaPhone } from 'react-icons/fa'; // Import icons from react-icons
-import { WiDayRain } from 'react-icons/wi'; // Import cloud and rain icon from react-icons
+import React from 'react';
+import Navbar from './Navbar.js'
+import Headercontent from './Headercontent.js'
+import Company1 from '../assets/amazon.png';
+import Company2 from '../assets/netflix.png';
+import Company3 from '../assets/hubspot.png';
+import Company4 from '../assets/zoom.png';
+import Company5 from '../assets/notion.png';
+import Company6 from '../assets/dribble.png';
+
 
 const Header = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            setIsScrolled(scrollPosition > 50); // Keep your 100px threshold
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
     return (
         <div className="Header">
-            <video className="background-video" autoPlay loop muted>
-                <source src={backgroundVideo} type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-            <div className="overlay">
-                <Navbar />
-                <div className="centered-text">
-                    <h1>
-                        <span style={{ marginLeft: '-50px' }}>A LOREM IPSUM</span> <br />
-                        <span style={{ marginLeft: '50px' }}>in LOREM IPSUM</span>
-                    </h1>
+            <Navbar />
+            <Headercontent />
+            <div className="w-full mt-12 overflow-hidden">
+                <div className="flex gap-8 animate-scroll whitespace-nowrap">
+                    <img src={Company1} alt="Company 1" className="h-12 w-auto" />
+                    <img src={Company2} alt="Company 2" className="h-12 w-auto" />
+                    <img src={Company3} alt="Company 3" className="h-12 w-auto" />
+                    <img src={Company4} alt="Company 4" className="h-12 w-auto" />
+                    <img src={Company5} alt="Company 4" className="h-12 w-auto" />
+                    <img src={Company6} alt="Company 4" className="h-12 w-auto" />
+                    {/* Repeat the logos for a continuous effect */}
+                    <img src={Company1} alt="Company 1" className="h-12 w-auto" />
+                    <img src={Company2} alt="Company 2" className="h-12 w-auto" />
+                    <img src={Company3} alt="Company 3" className="h-12 w-auto" />
+                    <img src={Company4} alt="Company 4" className="h-12 w-auto" />
+                    <img src={Company5} alt="Company 4" className="h-12 w-auto" />
+                    <img src={Company6} alt="Company 4" className="h-12 w-auto" />
                 </div>
-
-                {/* Profile Section */}
-                <div className="profile-section">
-                    <img src={profilePic} alt="Profile" className="profile-picture" />
-                    <div className="profile-text">
-                        <p className="small-font">lorem by</p>
-                        <p className="large-font">Lorem & Ipsum lorem</p>
-                    </div>
-                </div>
-
-                {/* Button Section */}
-                <div className={`button-section `}>
-                    <button className={`contact-button ${isScrolled ? 'scrolled' : ''}`} >
-                        <span><FaCalendarAlt className="icon" /></span>
-                        <div className="line"></div>
-                        <span><FaPhone className="icon" /></span>
-                    </button>
-                </div>
-
-                {/* Number and Icon Section */}
-                <div className="info-section">
-                    <p className="small-number">25 <WiDayRain className="cloud-icon" /> lorem</p>
-                </div>
+            </div>
+            <div className='w-[80%] m-auto mt-14 flex flex-col md:flex-row  items-center gap-10'>
+                <h1 className='text-4xl text-center sm:text-left font-bold p-2 lg:w-[14%] bg-[#B9FF66]'>Services</h1>
+                <p className='text-center sm:text-left '>At our digital marketing agency, we offer a range of services <br /> to help businesses grow and succeed online. These services include:</p>
             </div>
         </div>
     );
